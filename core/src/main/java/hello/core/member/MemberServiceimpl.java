@@ -1,7 +1,12 @@
 package hello.core.member;
 
 public class MemberServiceimpl implements MemberService{
-    MemberRepository memberRepository = new MemoryMemberRepository();
+    private final MemberRepository memberRepository;
+
+    public MemberServiceimpl(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
+
     @Override
     public Member findMember(Long memberId) {
         return memberRepository.findById(memberId);

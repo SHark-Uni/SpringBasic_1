@@ -1,5 +1,6 @@
 package hello.core.member;
 
+import hello.core.AppConfig;
 import hello.core.member.Grade;
 import hello.core.member.Member;
 import hello.core.member.MemberService;
@@ -9,7 +10,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class meberServiceTest {
-    MemberService memberService = new MemberServiceimpl();
+    AppConfig appConfig = new AppConfig();
+    MemberService memberService = appConfig.memberService() ;
     @Test
     @DisplayName("회원가입을 테스트합니다")
     void join(){
